@@ -1,0 +1,18 @@
+/*Data: grocery_db schema data tables
+Task: Calculate the average loyalty score for customers, by gender.
+For customers who do not have a loyalty score in the loyalty_scores table,
+assign a default score of 0.5 before working out the average.
+Expected Output: Your query should return a row for each gender value, and two columns:
+gender
+average_loyalty_score (you will calculate this)*/
+
+select 
+  a.gender,
+  avg(coalesce(b.customer_loyalty_score, 0.5)) as average_loyalty_score
+
+from 
+  grocery_db.customer_details a
+  left join grocery_db.loyalty_scores b on a.customer_id = b.customer_id
+
+group by 
+  a.gender;
