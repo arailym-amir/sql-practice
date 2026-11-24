@@ -1,9 +1,9 @@
-Data: grocery_db schema data tables
+/*Data: grocery_db schema data tables
 Task: Identify customers who have a credit score over 0.5 and who spent more than $100 in September 2020.
 Expected Output: Return data with 3 columns:
 customer_id
 credit_score
-total_sales (the customer's spend in September 2020)
+total_sales (the customer's spend in September 2020)*/
 
 select 
   a.customer_id,
